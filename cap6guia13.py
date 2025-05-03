@@ -25,10 +25,10 @@ pila_de_modelos.push(caso6)
 
 def flitrar_modelo (busco_modelo, pila_de_modelos = pila_de_modelos, pila_extra = pila_extra, lista_peliculas =lista_peliculas):
     while pila_de_modelos.size() > 0:
-        lista_actual = pila_de_modelos.on_top()
-        if lista_actual.modelo == busco_modelo:
-            lista_peliculas.append(lista_actual.pelicula)
-        pila_extra.push(lista_actual)
+        traje_actual = pila_de_modelos.on_top()
+        if traje_actual.modelo == busco_modelo:
+            lista_peliculas.append(traje_actual.pelicula)
+        pila_extra.push(traje_actual)
         pila_de_modelos.pop()
     pila_de_modelos = pila_extra
     return print(lista_peliculas)
@@ -41,17 +41,17 @@ while pila_extra.size() >0:
     pila_extra.pop()
 
 while pila_de_modelos.size() >0:
-    lista_actual = pila_de_modelos.on_top()
-    if lista_actual.estado == "dañado":
-        lista_dañados.append(lista_actual.modelo)
-        pila_extra.push(lista_actual)
+    traje_actual = pila_de_modelos.on_top()
+    if traje_actual.estado == "dañado":
+        lista_dañados.append(traje_actual.modelo)
+        pila_extra.push(traje_actual)
         pila_de_modelos.pop()
         print ("paso por aca")
-    elif lista_actual.estado == "destruido":
-        print(f"se eliminó el modelo {lista_actual.modelo}")
+    elif traje_actual.estado == "destruido":
+        print(f"se eliminó el modelo {traje_actual.modelo}")
         pila_de_modelos.pop()
     else:
-        pila_extra.push(lista_actual)
+        pila_extra.push(traje_actual)
         pila_de_modelos.pop()
         print("otro lado")
         

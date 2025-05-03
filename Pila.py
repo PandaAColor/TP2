@@ -25,10 +25,4 @@ class Pila:
     def size(self)-> int : #tamaño de la lista
         return len(self.__elementos)
 
-    def show(self): #muestra la lista
-        lista_auxiliar= Pila()
-        while self.size()>0:
-            value = self.pop()
-            print(value)
-            lista_auxiliar.push(value)
         
