@@ -8,12 +8,12 @@ class Pila:
     def push (self, value: Any)->None: #agrega elementos a la lista
         self.__elementos.append(value)
 
-    def pop(self): #elimina el último elemento
-        return{
-            self.__elementos.pop()
-            if self.__elementos
-            else None
-        }
+    def pop(self): 
+        if self.size() > 0:
+            return self.__elementos.pop()
+        else:
+            return None 
+
 
     def on_top(self):
         if self.__elementos:
